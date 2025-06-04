@@ -16,7 +16,7 @@ I'm still learning — not an expert — but I'm sharing what I discover so othe
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/markferdo/markferdo.github.io/blob/main/LICENSE).
+This work is published under the [MIT](https://github.com/markferdo/markferdo.github.io/blob/main/LICENSE) License.
 
 Thanks for visiting!  
 📫 [Find me on] [GitHub](https://github.com/markferdo) • [LinkedIn](https://www.linkedin.com/in/markferdo/)
