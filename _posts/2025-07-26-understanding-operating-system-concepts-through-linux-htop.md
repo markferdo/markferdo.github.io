@@ -80,7 +80,7 @@ Shows how much disk read/write activity is happening for each process.
 
 ## ⌨️ Handy Keys in htop
 
-F5(Tree view)
+### F5(Tree view)
 
 Shows processes in a hierarchical tree structure, so you can see parent-child relationships between processes.
 
@@ -92,14 +92,14 @@ MS word: Parent
 
 New document: Child
 
-F6(sort):
+### F6(sort):
 
 You can sort processes by CPU, memory, I/O, etc., by pressing F6.
 
-/ (Search):
+### / (Search):
 
 Opens a search bar where you can type a process name or PID(Process ID) to quickly locate it in the list.
 
-F9 (Kill Process):
+### F9 (Kill Process):
 
 This is just like using "End task" in windows task manager.
