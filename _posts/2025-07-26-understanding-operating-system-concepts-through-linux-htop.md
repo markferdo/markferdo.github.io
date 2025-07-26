@@ -11,7 +11,8 @@ sudo apt update
 sudo apt install htop
 ~~~
 
-htop ss here
+![htop screenshot](images/htop-ss.png)
+
 
 ## 🖥️ CPU Cores
 
