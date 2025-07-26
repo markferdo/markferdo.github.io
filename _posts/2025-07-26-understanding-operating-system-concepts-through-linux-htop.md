@@ -89,6 +89,7 @@ Parent-child: Parent is like the main program, and child is the sub-task.
 Example:
 
 MS word: Parent
+
 New document: Child
 
 F6(sort):
