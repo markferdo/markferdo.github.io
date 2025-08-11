@@ -261,7 +261,7 @@ sudo update-grub
 sudo reboot
 ~~~
 
-Then you can select the kernel from the GRUB menu. The newly installed kernel can be found in the ***Advanced option for Ubuntu**.
+Then you can select the kernel from the GRUB menu. The newly installed kernel can be found in the **Advanced option for Ubuntu**.
 
 After reboot, run this
 
