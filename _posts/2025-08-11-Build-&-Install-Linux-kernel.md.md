@@ -53,7 +53,7 @@ https://security.google.com/settings/security/apppasswords
 
 Enter the App name as **"git-send-email"** and click generate. Then google will show you a 16-character password. Copy and paste as the password. Then you will receive an email on TEST commit for git send-email. 
 
-Add the ss of the test email
+![patch_test_mail](/images/patch_test.jpg)
 
 ## Cloning the Linux Mainline
 
