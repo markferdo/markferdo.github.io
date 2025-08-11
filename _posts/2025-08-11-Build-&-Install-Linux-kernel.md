@@ -11,7 +11,7 @@ I recently started exploring Linux kernel development, and it all began with the
 ## Configuring Your Development System
 ![patch_test_mail](/images/stable_kernels.png)
 
-*This image is shown early in the post for preview purposes. It relates to cloning the stable Linux kernel version, which is explained a few steps later.*
+*This image is shown early in the post for preview purposes. It relates to cloning the stable Linux kernel version, which is explained in a few steps later.*
 
 ### Installing required packages
 ~~~
@@ -34,10 +34,9 @@ git config --global sendemail.smtpserverport 587
 git config --global sendemail.smtpencryption tls
 git config --global sendemail.smtpuser your.email@gmail.com
 ~~~
+Note: Don't add your app password here
 
-note: Don't add your app password here
-
-Then lets test the configuration
+Then let's test the configuration
 
 ~~~
 mkdir git-email-test
@@ -48,7 +47,7 @@ git add testfile.txt
 git commit -m "Test commit for git send-email"
 ~~~
 
-Then lets check this
+Then let's check this
 
 ~~~
 git format-patch -1 HEAD
@@ -57,19 +56,19 @@ git send-email 0001-Test-commit-for-git-send-email.patch --to=youremail@gmail.co
 
 ~~~
 
-Now it will ask the password. If you not enable 2-step verification then enter your email password.
+Now it will ask for the password. If you have not enabled 2-step verification, then enter your email and password.
 
-If you enable it then you have to put the app password for git-send-email. To get this use below link.
+If you enable it, then you have to put the app password for git-send-email. To get this, use the link below.
 
 https://security.google.com/settings/security/apppasswords
 
-Enter the App name as **"git-send-email"** and click generate. Then google will show you a 16-character password. Copy and paste as the password. Then you will receive an email on TEST commit for git send-email. 
+Enter the App name as **"git-send-email"** and click generate. Then Google will show you a 16-character password. Copy and paste as the password. Then you will receive an email on the TEST commit for git send-email. 
 
 ![patch_test_mail](/images/patch_test.jpg)
 
 ## Cloning the Linux Mainline
 
-It is good to creating a workspace in root not in under home directory.
+It is good to create a workspace in the root, not under the home directory.
 
 ~~~
 sudo mkdir /linux_work
@@ -77,13 +76,13 @@ sudo chown $USER:$USER /linux_work
 cd /linux_work
 ~~~
 
-Note: If you don't run **sudo chown $USER:$USER /linux_work** the directory owned by root. That means you'll have to use sudo for every action. It's bad specially when you are working with Git. In the next step we'll clone the linux mainline with **git clone**, and using Sit with sudo can mess up file permissions and security.  
+Note: If you don't run **sudo chown $USER:$USER /linux_work**, the directory owned by root. That means you'll have to use sudo for every action. It's bad specially when you are working with Git. In the next step, we'll clone the Linux mainline with **git clone**, and using Sit with sudo can mess up file permissions and security.  
 
 ~~~
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git linux_mainline
 ~~~
 
-Now you have the linux kernel source code 😎
+Now you have the Linux kernel source code 😎
 
 ## Reviewing a patch
 
@@ -93,15 +92,15 @@ git format-patch -1 a035d552a93bb9ef6048733bb9f2a0dc857ff869
 nano 0001-Makefile-Globally-enable-fall-through-warning.patch
 ~~~
 
-Note: a035d552a93bb9ef6048733bb9f2a0dc857ff869 this is the patch ID. You can replace it with any commit you wan to review.
+Note: a035d552a93bb9ef6048733bb9f2a0dc857ff869. This is the patch ID. You can replace it with any commit you want to review.
 
 ## Building and Installing the kernel
 
 ### Cloning the stable kernel
 
-Earlier we cloned the mainline kernel. Now we will clone the latest stable version.
+Earlier, we cloned the mainline kernel. Now we will clone the latest stable version.
 
-Go to home directory and clone the repo.
+Go to the home directory and clone the repo.
 
 ~~~
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git linux_stable
@@ -119,7 +118,7 @@ git branch -a | grep linux-6
 
 ### Copying the configuration
 
-The linux_stable directory now has the  kernel we are going to work on. This is the unmodified linux kernel. But our linux distro (ubuntu in my case) already comes with the a full kernel configuration. So we'll copy that configuration into our new kernel.
+The linux_stable directory now has the  kernel we are going to work on. This is the unmodified Linux kernel. But our Linux distro (Ubuntu in my case) already comes with a full kernel configuration. So we'll copy that configuration into our new kernel.
 
 ~~~
 ls /boot
@@ -130,7 +129,7 @@ cd ~/linux_stable
 cp /boot/config-6.11.0-26-generic .config
 ~~~
 
-Now you have the ubuntu kernel configuration in your new kernel.
+Now you have the Ubuntu kernel configuration in your new kernel.
 
 ## Compiling the Kernel
 
@@ -149,7 +148,7 @@ cd ~/projects/linux_stable
 make oldconfig
 ~~~
 
-Select default option for all configuration prompts. Just press enter.
+Select the default option for all configuration prompts. Just press Enter.
 
 Start the build:
 
@@ -159,12 +158,12 @@ make -j$(nproc)
 
 ### Handling Certificate Errors
 
-If you see errors something like this; 
+If you see errors, something like this; 
 
 make[3]: *** No rule to make target 'debian/canonical-certs.pem', needed by 'certs/x509_certificate_list'.  Stop.
 make[3]: *** Waiting for unfinished jobs....
 
-This is because it search for certificate. As per the chatgpt instruction I add create empty files  
+This is because it searches for a certificate. As per the ChatGPT instructions, I did some modifications. 
 
 ~~~
 scripts/config --set-str SYSTEM_TRUSTED_KEYS ""
@@ -193,7 +192,7 @@ Then build the kernel
 make -j$(nproc)
 ~~~
 
-Once it ready you will see sommthing like this.
+Once it ready, you will see something like this.
 
 ...   
 Kernel: arch/x86/boot/bzImage is ready  (#1)
@@ -219,13 +218,13 @@ sudo dmesg -t -l info > dmesg_current_info
 
 We have to disable the secure boot.
 
-check the secure boot status
+Check the secure boot status
 
 ~~~
 mokutil --sb-state
 ~~~
 
-If it is disable then we can continue. If not we have to disable it.
+If it is disabled, then we can continue. If not, we have to disable it.
 
 ~~~
 Disable validation:
@@ -262,12 +261,12 @@ sudo update-grub
 sudo reboot
 ~~~
 
-Then you can select the kernel from the GRUB menu. Newly installed kernel you can find in the Advanced option for Ubuntu. 
+Then you can select the kernel from the GRUB menu. The newly installed kernel can be found in the ***Advanced option for Ubuntu**.
 
-After reboot run this
+After reboot, run this
 
 ~~~
 uname -r
 ~~~
 
-You can check kernel version.
+You can check the kernel version.
