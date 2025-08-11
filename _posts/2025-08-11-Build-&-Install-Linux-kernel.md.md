@@ -1,5 +1,5 @@
 ## Configuring Your Development System
-
+![patch_test_mail](/images/stable_kernels.png)
 
 ### Installing required packages
 ~~~
