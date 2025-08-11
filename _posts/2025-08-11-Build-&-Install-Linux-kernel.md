@@ -10,6 +10,7 @@ I recently started exploring Linux kernel development, and it all began with the
 
 ## Configuring Your Development System
 ![patch_test_mail](/images/stable_kernels.png)
+his image is shown early in the post for preview purposes. It relates to cloning the stable Linux kernel version, which is explained a few steps later.
 
 ### Installing required packages
 ~~~
