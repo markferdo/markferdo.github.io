@@ -5,6 +5,9 @@ categories: [Linux, kernel]
 tags: [linux, kernel]
 ---
 
+
+I recently started exploring Linux kernel development, and it all began with the [LA Beginner's Guide to Linux Kernel Development (LFD103)](https://trainingportal.linuxfoundation.org/courses/a-beginners-guide-to-linux-kernel-development-lfd103). In this blog post, I’ll walk you through how to clone, configure, and build the Linux kernel from source, step by step.
+
 ## Configuring Your Development System
 ![patch_test_mail](/images/stable_kernels.png)
 
