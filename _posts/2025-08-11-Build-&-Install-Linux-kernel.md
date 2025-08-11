@@ -8,11 +8,11 @@ tags: [linux, kernel]
 
 I recently started exploring Linux kernel development, and it all began with the [A Beginner's Guide to Linux Kernel Development (LFD103)](https://trainingportal.linuxfoundation.org/courses/a-beginners-guide-to-linux-kernel-development-lfd103). In this blog post, I’ll walk you through how to clone, configure, and build the Linux kernel from source, step by step.
 
-## Configuring Your Development System
 ![patch_test_mail](/images/stable_kernels.png)
 
 *This image is shown early in the post for preview purposes. It relates to cloning the stable Linux kernel version, which is explained in a few steps later.*
 
+## Configuring Your Development System
 ### Installing required packages
 ~~~
 sudo apt-get install build-essential vim git cscope libncurses-dev libssl-dev bison flex
