@@ -1,3 +1,10 @@
+---
+title: "How to Clone and Build the Linux Kernel from Source"
+date: 2025-08-11 00:00:00 +0000
+categories: [Linux, kernel]
+tags: [linux, kernel]
+---
+
 ## Configuring Your Development System
 ![patch_test_mail](/images/stable_kernels.png)
 
